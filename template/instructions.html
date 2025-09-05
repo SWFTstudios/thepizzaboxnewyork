@@ -1,0 +1,324 @@
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Thu Sep 04 2025 14:54:48 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="683c82ea0d0eeb82005cd176" data-wf-site="683c82ea0d0eeb82005cd13a" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Instructions - Webflow HTML website template</title>
+  <meta content="Instructions - Webflow HTML website template" property="og:title">
+  <meta content="https://cdn.prod.website-files.com/66d8472718186d5432d79b3f/66e990519c9559ab07b100ab_zeal-taste-open-graphic.jpg" property="og:image">
+  <meta content="Instructions - Webflow HTML website template" property="twitter:title">
+  <meta content="https://cdn.prod.website-files.com/66d8472718186d5432d79b3f/66e990519c9559ab07b100ab_zeal-taste-open-graphic.jpg" property="twitter:image">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="../css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="../css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="../css/thepizzaboxnewyork.webflow.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic","Sansita:regular,700,800,900","Sansita:regular,italic,700,700italic,800,800italic,900,900italic","TASA Orbiter:regular,500,600,700,800"]  }});</script>
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="../images/favicon.jpg" rel="shortcut icon" type="image/x-icon">
+  <link href="../images/webclip.jpg" rel="apple-touch-icon">
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="global-styles w-embed">
+      <style>
+/* Make text look crisper and more legible in all browsers */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+/* Focus state style for keyboard navigation for the focusable elements */
+*[tabindex]:focus-visible,
+  input[type="file"]:focus-visible {
+   outline: 0.125rem solid #4d65ff;
+   outline-offset: 0.125rem;
+}
+/* Set color style to inherit */
+.inherit-color * {
+    color: inherit;
+}
+/* Get rid of top margin on first element in any rich text element */
+.w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
+  margin-top: 0 !important;
+}
+/* Get rid of bottom margin on last element in any rich text element */
+.w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+	margin-bottom: 0 !important;
+}
+/* Make sure containers never lose their center alignment */
+.container-medium,.container-small, .container-large {
+	margin-right: auto !important;
+  margin-left: auto !important;
+}
+/* 
+Make the following elements inherit typography styles from the parent and not have hardcoded values. 
+Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
+Uncomment this CSS to use it in the project. Leave this message for future hand-off.
+*/
+/*
+a,
+.w-input,
+.w-select,
+.w-tab-link,
+.w-nav-link,
+.w-dropdown-btn,
+.w-dropdown-toggle,
+.w-dropdown-link {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+*/
+/* Apply "..." after 3 lines of text */
+.text-style-3lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+/* Apply "..." after 2 lines of text */
+.text-style-2lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+/* These classes are never overwritten */
+.hide {
+  display: none !important;
+}
+@media screen and (max-width: 991px) {
+    .hide, .hide-tablet {
+        display: none !important;
+    }
+}
+  @media screen and (max-width: 767px) {
+    .hide-mobile-landscape{
+      display: none !important;
+    }
+}
+  @media screen and (max-width: 479px) {
+    .hide-mobile{
+      display: none !important;
+    }
+}
+.margin-0 {
+  margin: 0rem !important;
+}
+.padding-0 {
+  padding: 0rem !important;
+}
+.spacing-clean {
+padding: 0rem !important;
+margin: 0rem !important;
+}
+.margin-top {
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-top {
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-right {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-right {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-bottom {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-bottom {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-left {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+.padding-left {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+.margin-horizontal {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+.padding-horizontal {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+.margin-vertical {
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-vertical {
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+</style>
+    </div>
+    <main class="main-wrapper">
+      <section data-w-id="3f416b23-c93e-ddf3-00c8-78aeb1c824fa" class="header padding-section-small">
+        <div class="padding-global">
+          <div class="w-layout-blockcontainer container-medium w-container">
+            <div class="header-wrapper">
+              <a href="../index.html" class="nav_brand w-nav-brand"><img src="../images/nav-logo.svg" loading="lazy" alt="Brand Logo" class="nav_logo"></a>
+              <a href="mailto:abc@zealtaste.com" class="nav_menu_link w-inline-block"><img src="../images/mail-1-1.svg" loading="lazy" alt="Email logo - Orange" class="image">
+                <div class="text-size-regular text-color-orange hide-mobile-landscape">abc@zealtaste.com</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-instructions">
+        <div class="padding-global">
+          <div class="w-layout-blockcontainer container-medium w-container">
+            <div class="main-heading-wrapper">
+              <h1 data-w-id="025d200d-9977-3857-dfaa-f67d4409df7a" style="opacity:0" class="heading-style-h1">Instructions</h1>
+            </div>
+            <div class="instruction-main">
+              <div data-wf-pbl="layout-columns-vertical-flexbox" data-w-id="025d200d-9977-3857-dfaa-f67d4409df7d" style="opacity:0" class="cell tab-links-container">
+                <a href="#page-structure" class="tab-link">Global Page Structure</a>
+                <a href="#navigation-component-sticky" class="tab-link">Sticky Navigation Component with Transparent Background</a>
+                <a href="#horizontal-grid-component" class="tab-link">Three Column Component - Horizontal</a>
+                <a href="#vertical-grid-component" class="tab-link">Three Column Component - Vertical</a>
+                <a href="#footer-component" class="tab-link">Footer Component ( Social logo + Copyright )</a>
+              </div>
+              <div data-wf-pbl="layout-columns-vertical-flexbox" data-w-id="025d200d-9977-3857-dfaa-f67d4409df86" style="opacity:0" class="cell detail-container">
+                <div id="page-structure" data-wf-pbl="layout-columns-vertical-flexbox" class="width-full">
+                  <div class="image-wrapper"><img sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 1439px) 66vw, 840.25px" srcset="../images/image_2024_09_17T12_04_20_811Z_1image_2024_09_17T12_04_20_811Z.avif 500w, ../images/image_2024_09_17T12_04_20_811Z_1image_2024_09_17T12_04_20_811Z.avif 800w, ../images/image_2024_09_17T12_04_20_811Z_1image_2024_09_17T12_04_20_811Z.avif 1080w, ../images/image_2024_09_17T12_04_20_811Z_1image_2024_09_17T12_04_20_811Z.avif 1919w" alt="Section Structure " src="../images/image_2024_09_17T12_04_20_811Z_1image_2024_09_17T12_04_20_811Z.avif" loading="lazy" class="aspect-ratio-image"></div>
+                  <div class="gude-richtext w-richtext">
+                    <h2>Global Page Structure</h2>
+                    <p>Below are some mandatory components that you have to include before starting any page development</p>
+                    <h3>1. Header</h3>
+                    <h3>2. Hero Banner Content</h3>
+                    <h3>3. Footer</h3>
+                    <p>Between the Main Navigation and the Footer Component you can start placing the sections and start the page development.</p>
+                  </div>
+                </div>
+                <div class="divider"></div>
+                <div id="navigation-component-sticky" data-wf-pbl="layout-columns-vertical-flexbox" class="width-full">
+                  <div class="image-wrapper"><img sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 1439px) 66vw, 840.25px" srcset="../images/image_2024_09_17T10_56_31_524Z-1_1image_2024_09_17T10_56_31_524Z-1.avif 500w, ../images/image_2024_09_17T10_56_31_524Z-1_1image_2024_09_17T10_56_31_524Z-1.avif 800w, ../images/image_2024_09_17T10_56_31_524Z-1_1image_2024_09_17T10_56_31_524Z-1.avif 1080w, ../images/image_2024_09_17T10_56_31_524Z-1_1image_2024_09_17T10_56_31_524Z-1.avif 1919w" alt="Navbar Transparent Tooth Booth" src="../images/image_2024_09_17T10_56_31_524Z-1_1image_2024_09_17T10_56_31_524Z-1.avif" loading="lazy" class="aspect-ratio-image"></div>
+                  <div class="gude-richtext w-richtext">
+                    <h2>Sticky Navigation Component with Transparent Background</h2>
+                    <h3>1. header</h3>
+                    <p>Which has Sticky Navbar when scroll will stick at Top position and Adding Iterations Animation on the Main Header while page is scrolling &gt; header sticky.</p>
+                    <h3>2. header &gt; nav-logo </h3>
+                    <p>Which has nav-logo for Links to redirect to home page.</p>
+                    <p>The Div with class named <strong>nav-logo </strong>contains the template logo.</p>
+                  </div>
+                </div>
+                <div class="divider"></div>
+                <div id="horizontal-grid-component" data-wf-pbl="layout-columns-vertical-flexbox" class="width-full">
+                  <div class="image-wrapper"><img sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 1439px) 66vw, 840.25px" srcset="../images/image_2024_09_18T09_08_42_788Z-p-500.png 500w, ../images/image_2024_09_18T09_08_42_788Z-p-800.png 800w, ../images/image_2024_09_18T09_08_42_788Z-p-1080.png 1080w, ../images/image_2024_09_18T09_08_42_788Z-p-1600.png 1600w, ../images/image_2024_09_18T09_08_42_788Z.png 1919w" alt="Services Process Section" src="../images/image_2024_09_18T09_08_42_788Z.png" loading="lazy" class="aspect-ratio-image"></div>
+                  <div class="gude-richtext w-richtext">
+                    <h2>Three Column Component - Horizontal</h2>
+                    <h3>1. Click on Components in Left Toolbar Panel</h3>
+                    <ul role="list">
+                      <li>You can change icons directly from component right edit panel where you can see all the options of edit.</li>
+                      <li>You can edit Title and description directly from component right edit panel.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="divider"></div>
+                <div id="vertical-grid-component" data-wf-pbl="layout-columns-vertical-flexbox" class="width-full">
+                  <div class="image-wrapper"><img sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 1439px) 66vw, 840.25px" srcset="../images/image_2024_09_18T09_07_23_298Z-p-500.png 500w, ../images/image_2024_09_18T09_07_23_298Z-p-800.png 800w, ../images/image_2024_09_18T09_07_23_298Z-p-1080.png 1080w, ../images/image_2024_09_18T09_07_23_298Z-p-1600.png 1600w, ../images/image_2024_09_18T09_07_23_298Z.png 1919w" alt="Services Process Section" src="../images/image_2024_09_18T09_07_23_298Z.png" loading="lazy" class="aspect-ratio-image"></div>
+                  <div class="gude-richtext w-richtext">
+                    <h2>Three Column Component - Vertical</h2>
+                    <h3>1. Click on Components in Left Toolbar Panel</h3>
+                    <ul role="list">
+                      <li>You can change icons directly from component right edit panel where you can see all the options of edit.</li>
+                      <li>You can edit Title and description directly from component right edit panel.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="divider"></div>
+                <div id="footer-component" data-wf-pbl="layout-columns-vertical-flexbox" class="width-full">
+                  <div class="image-wrapper"><img sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 1439px) 66vw, 840.25px" srcset="../images/image_2024_09_18T10_52_58_663Z-p-500.png 500w, ../images/image_2024_09_18T10_52_58_663Z-p-800.png 800w, ../images/image_2024_09_18T10_52_58_663Z-p-1080.png 1080w, ../images/image_2024_09_18T10_52_58_663Z-p-1600.png 1600w, ../images/image_2024_09_18T10_52_58_663Z.png 1919w" alt="Footer Section" src="../images/image_2024_09_18T10_52_58_663Z.png" loading="lazy" class="aspect-ratio-image"></div>
+                  <div class="gude-richtext w-richtext">
+                    <h2>Footer Component ( Social logo + Copyright )</h2>
+                    <h3>1. Click on Components in Left Toolbar Panel</h3>
+                    <p>Which has <strong>Footer Component</strong> just need to click on body and will add directly to after Footer section so just need to drag and place where ever you want.</p>
+                    <h3>2. Footer Component &gt; copyright</h3>
+                    <p>It contains the Powered by and developed by links just change the link and publish you can check all your changes in preview mode or can check by staging link or Live link.</p>
+                    <h3>3. Footer Component &gt; Social wrapper</h3>
+                    <p>The social logo wrapper in the footer is designed with distinct logos for both the initial and hover states. Additionally, each logo has an assigned link, which can be easily customized via the component panel to suit your needs.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="footer" class="section-booking-form padding-section-medium">
+        <div class="padding-global">
+          <div class="w-layout-blockcontainer container-small w-container">
+            <div class="common-grid-one-col">
+              <div class="common-heading-wrap">
+                <div data-w-id="3d4e6bc3-3768-70dc-86d5-94a1336bf710" class="overline-text">book your table</div>
+                <div data-w-id="3d4e6bc3-3768-70dc-86d5-94a1336bf712" class="padding-bottom padding-xsmall"></div>
+                <h2 data-w-id="3d4e6bc3-3768-70dc-86d5-94a1336bf713" class="heading-style-h2 text-color-alternate">Make a Reservation</h2>
+                <div data-w-id="3d4e6bc3-3768-70dc-86d5-94a1336bf715" class="padding-bottom padding-medium"></div>
+                <div class="max-width-large">
+                  <p data-w-id="3d4e6bc3-3768-70dc-86d5-94a1336bf717" class="text-size-regular text-color-white-60">Call <a href="tel:18005551234" class="link-style text-color-white_60">+1 (800) 555-1234</a> from 5a – 11p daily, or book online Reservations required for parties of 4 or more.</p>
+                </div>
+              </div>
+              <div data-w-id="3d4e6bc3-3768-70dc-86d5-94a1336bf71c" class="booking-form w-form">
+                <form method="get" name="email-form" data-name="Email Form" class="form-form" data-wf-page-id="683c82ea0d0eeb82005cd176" data-wf-element-id="3d4e6bc3-3768-70dc-86d5-94a1336bf71d">
+                  <div class="form-component-col-1"><input class="form-input w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="Your name" type="text" id="name" required=""></div>
+                  <div class="form-component-col-2"><input class="form-input w-input" maxlength="256" name="Phone-2" data-name="Phone 2" placeholder="Phone number" type="tel" id="phone-number" required=""><input class="form-input w-node-_3d4e6bc3-3768-70dc-86d5-94a1336bf722-336bf70b w-input" maxlength="256" name="Email-5" data-name="Email 5" placeholder="Email address" type="email" id="email" required=""></div>
+                  <div class="form-component-col-2"><input class="form-input w-input" maxlength="256" name="date-time-2" data-name="Date Time 2" placeholder="Date time" type="text" id="date-time" required=""><input class="form-input w-node-_3d4e6bc3-3768-70dc-86d5-94a1336bf725-336bf70b w-input" maxlength="256" name="seats-2" data-name="Seats 2" placeholder="Seats" type="tel" id="seats" required=""></div>
+                  <div class="form-component-col-1"><textarea required="" placeholder="Message" maxlength="5000" id="message" name="message-2" data-name="Message 2" class="form-input is-text-area w-node-_3d4e6bc3-3768-70dc-86d5-94a1336bf727-336bf70b w-input"></textarea></div><input type="submit" data-wait="Please wait..." class="button is-form-submit w-button" value="Book Us For Your Next Event">
+                </form>
+                <div class="success-message w-form-done">
+                  <div class="success-message-text">Thank you! Your submission has been received!</div>
+                </div>
+                <div class="error-message w-form-fail">
+                  <div class="error-message-text">Oops! Something went wrong while submitting the form.</div>
+                </div>
+              </div>
+              <div class="social-bar-wrapper">
+                <a data-w-id="3d4e6bc3-3768-70dc-86d5-94a1336bf730" href="https://facebook.com" target="_blank" class="social-icon-wrap w-inline-block"><img src="../images/Vector-5.svg" loading="lazy" alt="Facebook white logo" class="social-icon"><img src="../images/fb-orange.svg" loading="lazy" alt="Facebook orange logo" class="social-icon-alternate"></a>
+                <a data-w-id="3d4e6bc3-3768-70dc-86d5-94a1336bf733" href="https://twitter.com" target="_blank" class="social-icon-wrap w-inline-block"><img src="../images/x-white.svg" loading="lazy" alt="Twitter white logo" class="social-icon"><img src="../images/x-orange.svg" loading="lazy" alt="Twitter orange logo" class="social-icon-alternate"></a>
+                <a data-w-id="3d4e6bc3-3768-70dc-86d5-94a1336bf736" href="https://instagram.com" target="_blank" class="social-icon-wrap w-inline-block"><img src="../images/Vector-7.svg" loading="lazy" alt="Instagram white logo" class="social-icon"><img src="../images/instagram-orange.svg" loading="lazy" alt="Instagram orange logo" class="social-icon-alternate"></a>
+              </div>
+              <div class="copyright-main-wrapper">
+                <div class="copyright-wrap">
+                  <div data-w-id="3d4e6bc3-3768-70dc-86d5-94a1336bf73d" class="text-size-medium text-color-white_60">Developed by <a href="https://zealousweb.com" target="_blank" class="link-style is-legal">ZealousWeb</a>
+                  </div>
+                  <div data-w-id="3d4e6bc3-3768-70dc-86d5-94a1336bf741" class="text-size-medium text-color-white_60">Powered by <a href="https://webflow.com" target="_blank" class="link-style is-legal">Webflow</a>
+                  </div>
+                </div>
+                <div class="copyright-wrap">
+                  <a data-w-id="29edd425-51af-faa2-3c0b-9240f411e7e5" href="../template/licenses.html" class="link-style is-legal">Licenses</a>
+                  <a data-w-id="f455f0d8-5556-051b-443c-3a68d365697f" href="../template/instructions.html" aria-current="page" class="link-style is-legal w--current">Instructions</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=683c82ea0d0eeb82005cd13a" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="../js/webflow.js" type="text/javascript"></script>
+</body>
+</html>
