@@ -1,0 +1,18 @@
+name = "thepizzaboxnewyork"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+[site]
+bucket = "."
+
+[[routes]]
+pattern = "thepizzaboxnewyork.com/*"
+zone_name = "thepizzaboxnewyork.com"
+
+# Optional: Add custom headers for better performance
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-Content-Type-Options = "nosniff"
+X-XSS-Protection = "1; mode=block"

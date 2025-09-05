@@ -1,0 +1,23 @@
+{
+  "name": "thepizzaboxnewyork",
+  "version": "1.0.0",
+  "description": "The Pizza Box NY - Cloudflare Worker deployment",
+  "main": "src/index.js",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "preview": "wrangler preview"
+  },
+  "devDependencies": {
+    "wrangler": "^4.34.0"
+  },
+  "keywords": [
+    "cloudflare",
+    "worker",
+    "static-site",
+    "pizza",
+    "restaurant"
+  ],
+  "author": "SWFT Studios",
+  "license": "MIT"
+}
