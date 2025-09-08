@@ -2,13 +2,19 @@ name = "thepizzaboxnewyork"
 main = "src/index.js"
 compatibility_date = "2024-01-01"
 
-[site]
-bucket = "."
+# Static assets configuration
+[assets]
+directory = "."
+binding = "ASSETS"
 
-# Custom domain routing (uncomment when domain is added to Cloudflare)
-# [[routes]]
-# pattern = "thepizzaboxnewyork.com/*"
-# zone_name = "thepizzaboxnewyork.com"
+# Custom domain routing
+[[routes]]
+pattern = "thepizzaboxny.com/*"
+zone_name = "thepizzaboxny.com"
+
+[[routes]]
+pattern = "www.thepizzaboxny.com/*"
+zone_name = "thepizzaboxny.com"
 
 # Custom headers for better performance
 [[headers]]
