@@ -16,10 +16,14 @@ zone_name = "thepizzaboxny.com"
 pattern = "www.thepizzaboxny.com/*"
 zone_name = "thepizzaboxny.com"
 
-# Custom headers for better performance
-[[headers]]
-for = "/*"
-[headers.values]
-X-Frame-Options = "DENY"
-X-Content-Type-Options = "nosniff"
-X-XSS-Protection = "1; mode=block"
+[[routes]]
+pattern = "thepizzaboxnewyork.com/*"
+zone_name = "thepizzaboxnewyork.com"
+
+[[routes]]
+pattern = "www.thepizzaboxnewyork.com/*"
+zone_name = "thepizzaboxnewyork.com"
+
+# Note: Custom headers should be configured in Cloudflare Dashboard
+# under Rules > Transform Rules > HTTP Response Header Modification
+# for better performance and security
