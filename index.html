@@ -577,7 +577,7 @@ margin: 0rem !important;
             </div>
             <div class="common-grid-one-col">
               <div class="booking-form w-form">
-                <form method="post" name="email-form" data-name="Email Form" action="https://formsubmit.co/thepizzaboxny@gmail.com" class="form-form" data-wf-page-id="683c82ea0d0eeb82005cd172" data-wf-element-id="0035676e-c36d-2c88-0a31-3fb2b60f9f0a">
+                <form method="post" name="email-form" data-name="Email Form" action="https://formsubmit.co/thepizzaboxny@gmail.com" class="form-form" data-wf-page-id="683c82ea0d0eeb82005cd172" data-wf-element-id="0035676e-c36d-2c88-0a31-3fb2b60f9f0a" onsubmit="formatDateTime()">
                   <!-- Anti-spam hidden fields -->
                   <input type="hidden" name="_subject" value="New Event Inquiry from The Pizza Box Website">
                   <input type="hidden" name="_replyto" value="">
@@ -591,7 +591,8 @@ margin: 0rem !important;
                       <option value="Catskills Catering Inquiry">Catskills Catering</option>
                     </select></div>
                   <div class="form-component-col-2"><input class="form-input w-input" maxlength="256" name="Phone-Number" data-name="Phone Number" placeholder="Phone number" type="tel" id="Phone-Number" required=""><input class="form-input w-node-_0035676e-c36d-2c88-0a31-3fb2b60f9f0f-005cd172 w-input" maxlength="256" name="email" data-name="Email Address" placeholder="Email address" type="email" id="Email-Address" required=""></div>
-                  <div class="form-component-col-2"><input class="form-input w-input" maxlength="256" name="Date-Time" data-name="Date &amp; Time" placeholder="Date time" type="text" id="Date-Time" required=""><input class="form-input w-node-_0035676e-c36d-2c88-0a31-3fb2b60f9f12-005cd172 w-input" maxlength="256" name="Number-of-Seats" data-name="Number of Seats" placeholder="Seats" type="tel" id="Number-of-Seats" required=""></div>
+                  <div class="form-component-col-2"><input class="form-input w-input" name="Event-Date" data-name="Event Date" placeholder="Select Date" type="date" id="Event-Date" required=""><input class="form-input w-input" name="Event-Time" data-name="Event Time" placeholder="Select Time" type="time" id="Event-Time" required=""></div>
+                  <div class="form-component-col-1"><input class="form-input w-node-_0035676e-c36d-2c88-0a31-3fb2b60f9f12-005cd172 w-input" maxlength="256" name="Number-of-Seats" data-name="Number of Seats" placeholder="Number of Seats" type="tel" id="Number-of-Seats" required=""></div>
                   <div class="form-component-col-1"><textarea id="Message" name="Message" maxlength="5000" data-name="Message" placeholder="Message" required="" class="form-input is-text-area w-node-_0035676e-c36d-2c88-0a31-3fb2b60f9f14-005cd172 w-input"></textarea></div><input type="submit" data-wait="Please wait..." class="button is-form-submit w-button" value="Submit">
                 </form>
                 <div class="success-message w-form-done">
@@ -632,23 +633,58 @@ margin: 0rem !important;
   <script>
 // immediately/self invoked function. This function executes right away
 (function() {
-  // create a new Library instance and store it in a variable called "fsSlider"
-  var fsSlider = new FsLibrary('.cms-feed-one')  // Class of your hidden CMS collection list
-  // run slider on our instance
-  fsSlider.slider({
-    sliderComponent: '.instagram-slider',  // Webflow slider component
-    itemsPerSlide: 1  // amount of CMS items to show per Slide
-  })
+  // create a new Library instance and store it in a variable called "fsSlider"
+  var fsSlider = new FsLibrary('.cms-feed-one')  // Class of your hidden CMS collection list
+  // run slider on our instance
+  fsSlider.slider({
+    sliderComponent: '.instagram-slider',  // Webflow slider component
+    itemsPerSlide: 1  // amount of CMS items to show per Slide
+  })
 })();
 (function() {
-  // create a new Library instance and store it in a variable called "fsSlider"
-  var fsSliderTwo = new FsLibrary('.cms-feed-two')  // Class of your hidden CMS collection list
-  // run slider on our instance
-  fsSliderTwo.slider({
-    sliderComponent: '.instagram-cards-slider',  // Webflow slider component
-    itemsPerSlide: 1  // amount of CMS items to show per Slide
-  })
+  // create a new Library instance and store it in a variable called "fsSlider"
+  var fsSliderTwo = new FsLibrary('.cms-feed-two')  // Class of your hidden CMS collection list
+  // run slider on our instance
+  fsSliderTwo.slider({
+    sliderComponent: '.instagram-cards-slider',  // Webflow slider component
+    itemsPerSlide: 1  // amount of CMS items to show per Slide
+  })
 })();
+
+// Format date and time for better email readability
+function formatDateTime() {
+  const dateInput = document.getElementById('Event-Date');
+  const timeInput = document.getElementById('Event-Time');
+  
+  if (dateInput.value && timeInput.value) {
+    const date = new Date(dateInput.value);
+    const time = timeInput.value;
+    
+    // Format date as "Monday, December 15, 2025"
+    const options = { 
+      weekday: 'long', 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    };
+    const formattedDate = date.toLocaleDateString('en-US', options);
+    
+    // Format time as "7:00 PM"
+    const [hours, minutes] = time.split(':');
+    const hour12 = hours % 12 || 12;
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    const formattedTime = `${hour12}:${minutes} ${ampm}`;
+    
+    // Create a hidden field with the formatted date/time
+    const hiddenField = document.createElement('input');
+    hiddenField.type = 'hidden';
+    hiddenField.name = 'Formatted-Date-Time';
+    hiddenField.value = `${formattedDate} at ${formattedTime}`;
+    
+    // Add to form
+    document.querySelector('form[name="email-form"]').appendChild(hiddenField);
+  }
+}
 </script>
 </body>
 </html>
