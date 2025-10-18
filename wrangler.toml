@@ -7,22 +7,12 @@ compatibility_date = "2024-01-01"
 directory = "."
 binding = "ASSETS"
 
-# Custom domain routing
-[[routes]]
-pattern = "thepizzaboxny.com/*"
-zone_name = "thepizzaboxny.com"
+# Custom domains (preferred method for Workers)
+# Note: Routes should be managed via Cloudflare Dashboard
+# or use routes array for advanced routing only
 
-[[routes]]
-pattern = "www.thepizzaboxny.com/*"
-zone_name = "thepizzaboxny.com"
-
-[[routes]]
-pattern = "thepizzaboxnewyork.com/*"
-zone_name = "thepizzaboxnewyork.com"
-
-[[routes]]
-pattern = "www.thepizzaboxnewyork.com/*"
-zone_name = "thepizzaboxnewyork.com"
+# For custom domains, add them via Cloudflare Dashboard:
+# Settings > Domains & Routes > Add Custom Domain
 
 # Note: Custom headers should be configured in Cloudflare Dashboard
 # under Rules > Transform Rules > HTTP Response Header Modification
