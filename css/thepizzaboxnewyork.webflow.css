@@ -1818,13 +1818,6 @@ figcaption {
   background-color: var(--base-color-brand--white);
 }
 
-.testimonial-carousel .w-slide {
-  height: auto !important;
-  min-height: auto !important;
-  display: flex;
-  align-items: stretch;
-}
-
 .testimonial-card {
   background-color: var(--base-color-brand--white);
   border-radius: 0.5rem;
@@ -1834,15 +1827,13 @@ figcaption {
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  height: auto;
-  min-height: auto;
-  width: 100%;
+  height: 750px;
+  min-height: 750px;
 }
 
 .testimonial-image-container {
   width: 50%;
-  height: auto;
-  min-height: 300px;
+  height: 750px;
   overflow: hidden;
   position: relative;
   flex-shrink: 0;
@@ -1851,7 +1842,6 @@ figcaption {
 .testimonial-card-image {
   width: 100%;
   height: 100%;
-  min-height: 300px;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -1867,7 +1857,7 @@ figcaption {
   flex-direction: column;
   justify-content: flex-start;
   background-color: var(--base-color-brand--white);
-  min-height: auto;
+  height: 750px;
 }
 
 .testimonial-quote-icon {
@@ -4617,22 +4607,18 @@ figcaption {
     max-width: 100%;
     margin: 0 1rem;
     flex-direction: column;
-    min-height: auto;
+    height: 500px;
+    min-height: 500px;
   }
   
   .testimonial-image-container {
     width: 100%;
-    height: auto;
-    min-height: 200px;
-  }
-  
-  .testimonial-card-image {
-    min-height: 200px;
+    height: 200px;
   }
   
   .testimonial-card-content {
     padding: 2rem 1.5rem;
-    min-height: auto;
+    height: 300px;
   }
   
   .testimonial-card-text {
