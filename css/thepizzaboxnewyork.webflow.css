@@ -1818,18 +1818,18 @@ figcaption {
   background-color: var(--base-color-brand--white);
   border-radius: 0.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
+  overflow: visible;
   max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
   height: auto;
-  min-height: 300px;
+  min-height: 400px;
 }
 
 .testimonial-image-container {
   width: 50%;
-  height: 300px;
+  height: 400px;
   overflow: hidden;
   position: relative;
   flex-shrink: 0;
@@ -1851,8 +1851,9 @@ figcaption {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: var(--base-color-brand--white);
+  min-height: 400px;
 }
 
 .testimonial-quote-icon {
@@ -1869,11 +1870,13 @@ figcaption {
   margin-bottom: 2rem;
   font-style: italic;
   font-weight: 400;
+  flex: 1;
 }
 
 .testimonial-card-author {
   border-top: 1px solid #f0f0f0;
   padding-top: 1.5rem;
+  margin-top: auto;
 }
 
 .author-name {
@@ -4605,11 +4608,12 @@ figcaption {
   
   .testimonial-image-container {
     width: 100%;
-    height: 200px;
+    height: 250px;
   }
   
   .testimonial-card-content {
     padding: 2rem 1.5rem;
+    min-height: auto;
   }
   
   .testimonial-card-text {
