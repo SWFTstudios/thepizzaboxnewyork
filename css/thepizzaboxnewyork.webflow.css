@@ -1816,6 +1816,7 @@ figcaption {
 
 .testimonial-carousel {
   background-color: var(--base-color-brand--white);
+  height: 750px;
 }
 
 .testimonial-card {
@@ -1823,17 +1824,17 @@ figcaption {
   border-radius: 0.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   overflow: visible;
-  max-width: 800px;
+  max-width: 750px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  height: 750px;
-  min-height: 750px;
+  height: auto;
+  min-height: auto;
 }
 
 .testimonial-image-container {
   width: 50%;
-  height: 750px;
+  height: auto;
   overflow: hidden;
   position: relative;
   flex-shrink: 0;
@@ -1857,7 +1858,7 @@ figcaption {
   flex-direction: column;
   justify-content: flex-start;
   background-color: var(--base-color-brand--white);
-  height: 750px;
+  height: auto;
 }
 
 .testimonial-quote-icon {
