@@ -1798,6 +1798,11 @@ figcaption {
   line-height: 1.9375rem;
 }
 
+/* Navigation Header Styles */
+.header {
+  border-bottom: 2px solid var(--base-color-brand--red);
+}
+
 .section-testimonials {
   background-color: var(--base-color-brand--white);
   position: relative;
@@ -1816,7 +1821,7 @@ figcaption {
 
 .testimonial-carousel {
   background-color: var(--base-color-brand--white);
-  height: 750px;
+  min-height: 750px;
 }
 
 .testimonial-card {
@@ -1838,6 +1843,51 @@ figcaption {
   overflow: hidden;
   position: relative;
   flex-shrink: 0;
+}
+
+/* Mobile responsive styles for testimonial images */
+@media screen and (max-width: 767px) {
+  .testimonial-card {
+    flex-direction: column;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .testimonial-image-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    order: 1;
+  }
+  
+  .testimonial-card-content {
+    width: 100%;
+    height: auto;
+    order: 2;
+    padding: 1.5rem;
+  }
+  
+  .testimonial-card-image {
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .testimonial-card-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Extra small mobile devices - taller square images */
+@media screen and (max-width: 475px) {
+  .testimonial-image-container {
+    aspect-ratio: 1 / 1;
+    height: auto;
+  }
+  
+  .testimonial-card-image {
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
 .testimonial-card-image {
