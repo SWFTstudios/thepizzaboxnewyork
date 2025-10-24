@@ -679,7 +679,10 @@ function formatDateTime() {
   const timeInput = document.getElementById('Event-Time');
   
   if (dateInput.value && timeInput.value) {
-    const date = new Date(dateInput.value);
+    // Parse the date string properly to avoid timezone issues
+    const [year, month, day] = dateInput.value.split('-');
+    const date = new Date(year, month - 1, day); // month is 0-indexed
+    
     const time = timeInput.value;
     
     // Format date as "Monday, December 15, 2025"
