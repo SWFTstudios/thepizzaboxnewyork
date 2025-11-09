@@ -1,1 +1,5 @@
 .wrangler/
+.env
+airtable.config.js
+node_modules/
+*.log

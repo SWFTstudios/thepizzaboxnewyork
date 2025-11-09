@@ -994,6 +994,26 @@ figcaption {
   line-height: 1.375rem;
 }
 
+/* Red placeholder color for date, time, and seats fields */
+input[type="date"]::placeholder,
+input[type="time"]::placeholder,
+input[type="number"]::placeholder,
+input[id="Event-Date"]::placeholder,
+input[id="Event-Time"]::placeholder,
+input[id="Number-of-Seats"]::placeholder {
+  color: var(--base-color-brand--red) !important;
+}
+
+/* Red color for date/time input text values */
+input[type="date"],
+input[type="time"],
+input[type="number"],
+input[id="Event-Date"],
+input[id="Event-Time"],
+input[id="Number-of-Seats"] {
+  color: var(--base-color-brand--red);
+}
+
 .form-input.is-select-input {
   opacity: 1;
   color: var(--background-color--background-secondary);
