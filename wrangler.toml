@@ -7,10 +7,6 @@ compatibility_date = "2024-01-01"
 directory = "."
 binding = "ASSETS"
 
-# Explicitly exclude node_modules and other large files
-[assets.ignore]
-patterns = ["node_modules/**", ".git/**", ".wrangler/**", "*.log"]
-
 # Custom domains (preferred method for Workers)
 # Note: Routes should be managed via Cloudflare Dashboard
 # or use routes array for advanced routing only

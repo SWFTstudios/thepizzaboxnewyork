@@ -4,12 +4,7 @@
   "description": "The Pizza Box NY - Cloudflare Worker deployment",
   "main": "src/index.js",
   "scripts": {
-    "deploy": "wrangler deploy",
-    "dev": "wrangler dev",
-    "preview": "wrangler preview"
-  },
-  "devDependencies": {
-    "wrangler": "^4.34.0"
+    "deploy": "npx wrangler deploy"
   },
   "keywords": [
     "cloudflare",
