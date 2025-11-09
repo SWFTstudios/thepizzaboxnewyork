@@ -1,4 +1,7 @@
+node_modules
 node_modules/
+**/node_modules
+**/node_modules/
 .git/
 .gitignore
 .DS_Store
@@ -6,4 +9,8 @@ node_modules/
 .env
 .wrangler/
 updated_index.html
+new_index.html
 *.map
+package.json
+package-lock.json
+bun.lockb
