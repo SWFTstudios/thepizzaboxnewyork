@@ -1,0 +1,11 @@
+name = "thepizzaboxformsubmission"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# Environment variables
+[vars]
+AIRTABLE_BASE_ID = "appCdCg00IyNvmV1L"
+
+# Secret (already set via: wrangler secret put AIRTABLE_ACCESS_TOKEN)
+# AIRTABLE_ACCESS_TOKEN is stored as an encrypted secret in Cloudflare
+

@@ -858,7 +858,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Send to Airtable (non-blocking)
       try {
-        const airtableResponse = await fetch('/api/submit-form', {
+        const airtableResponse = await fetch('https://thepizzaboxformsubmission.elombe.workers.dev', {
           method: 'POST',
           body: formData
         });
