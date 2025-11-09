@@ -844,6 +844,39 @@ function formatDateTime() {
     document.querySelector('form[name="email-form"]').appendChild(hiddenField);
   }
 }
+
+// Dual submission: Send to both FormSubmit.co (email) AND Airtable
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('form[name="email-form"]');
+  
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      // Don't prevent default - let FormSubmit.co work normally
+      // But also send to Airtable in parallel
+      
+      const formData = new FormData(form);
+      
+      // Send to Airtable (non-blocking)
+      try {
+        const airtableResponse = await fetch('/api/submit-form', {
+          method: 'POST',
+          body: formData
+        });
+        
+        if (airtableResponse.ok) {
+          console.log('✅ Form data saved to Airtable');
+        } else {
+          console.warn('⚠️ Airtable save failed, but email will still be sent');
+        }
+      } catch (error) {
+        console.warn('⚠️ Airtable save error, but email will still be sent:', error);
+      }
+      
+      // Let the form continue to submit to FormSubmit.co normally
+      // (don't call e.preventDefault())
+    });
+  }
+});
 </script>
 </body>
 </html>
