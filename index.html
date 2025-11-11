@@ -846,14 +846,22 @@ function formatDateTime() {
 }
 
 // Handle form submission to Airtable
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('event-booking-form');
-  const successMessage = document.querySelector('.success-message');
-  const errorMessage = document.querySelector('.error-message');
-  
-  if (form) {
+(function() {
+  // Wait for everything to load, including Webflow and Finsweet libraries
+  window.addEventListener('load', function() {
+    const form = document.getElementById('event-booking-form');
+    
+    if (!form) {
+      console.warn('Form not found');
+      return;
+    }
+    
+    const successMessage = document.querySelector('.success-message');
+    const errorMessage = document.querySelector('.error-message');
+    
     form.addEventListener('submit', async function(e) {
       e.preventDefault(); // Prevent default form submission
+      e.stopPropagation(); // Stop event from bubbling
       
       // Format date/time before submission
       formatDateTime();
@@ -861,8 +869,10 @@ document.addEventListener('DOMContentLoaded', function() {
       // Get form data
       const formData = new FormData(form);
       
-      // Show loading state (optional - you can add a loading indicator)
+      // Show loading state
       const submitButton = form.querySelector('input[type="submit"]');
+      if (!submitButton) return;
+      
       const originalButtonText = submitButton.value;
       submitButton.value = 'Submitting...';
       submitButton.disabled = true;
@@ -879,35 +889,49 @@ document.addEventListener('DOMContentLoaded', function() {
         if (response.ok && result.success) {
           // Show success message
           console.log('✅ Form submitted successfully to Airtable:', result.recordId);
-          form.style.display = 'none';
-          successMessage.style.display = 'block';
           
-          // Reset form after 3 seconds
-          setTimeout(() => {
+          if (successMessage) {
+            form.style.display = 'none';
+            successMessage.style.display = 'block';
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+              form.reset();
+              form.style.display = 'block';
+              successMessage.style.display = 'none';
+              submitButton.value = originalButtonText;
+              submitButton.disabled = false;
+            }, 3000);
+          } else {
+            alert('Thank you! Your submission has been received.');
             form.reset();
-            form.style.display = 'block';
-            successMessage.style.display = 'none';
             submitButton.value = originalButtonText;
             submitButton.disabled = false;
-          }, 3000);
+          }
         } else {
           throw new Error(result.error || 'Submission failed');
         }
       } catch (error) {
         // Show error message
         console.error('❌ Form submission error:', error);
-        errorMessage.style.display = 'block';
+        
+        if (errorMessage) {
+          errorMessage.style.display = 'block';
+          
+          // Hide error after 5 seconds
+          setTimeout(() => {
+            errorMessage.style.display = 'none';
+          }, 5000);
+        } else {
+          alert('Error: ' + error.message);
+        }
+        
         submitButton.value = originalButtonText;
         submitButton.disabled = false;
-        
-        // Hide error after 5 seconds
-        setTimeout(() => {
-          errorMessage.style.display = 'none';
-        }, 5000);
       }
     });
-  }
-});
+  });
+})();
 </script>
 </body>
 </html>
