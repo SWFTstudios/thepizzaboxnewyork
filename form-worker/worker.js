@@ -32,7 +32,7 @@ export default {
 
       console.info('Form submission received:', data.Name || 'No name');
 
-      // Prepare Airtable record
+      // Prepare Airtable record (exclude linked fields: Customer, Order)
       const airtableRecord = {
         fields: {
           'Name': data.Name || '',
@@ -43,8 +43,9 @@ export default {
           'Event Time': data['Event-Time'] || '',
           'Formatted Date Time': data['Formatted-Date-Time'] || '',
           'Number of Seats': parseInt(data['Number-of-Seats']) || 0,
-          'Message': data.Message || '',
-          'Submission Date': new Date().toISOString()
+          'Message': data.Message || ''
+          // Note: Customer and Order are linked record fields - don't send them
+          // Submission Date will be auto-populated by Airtable if it's an auto field
         }
       };
 
@@ -63,8 +64,17 @@ export default {
 
       if (!airtableResponse.ok) {
         const errorText = await airtableResponse.text();
-        console.error('Airtable API error:', errorText);
-        throw new Error(`Airtable error: ${airtableResponse.status}`);
+        console.error('Airtable API error:', airtableResponse.status, errorText);
+        
+        // Parse error details if possible
+        try {
+          const errorJson = JSON.parse(errorText);
+          console.error('Airtable error details:', JSON.stringify(errorJson, null, 2));
+        } catch (e) {
+          // Not JSON, log as text
+        }
+        
+        throw new Error(`Airtable error ${airtableResponse.status}: ${errorText}`);
       }
 
       const result = await airtableResponse.json();
