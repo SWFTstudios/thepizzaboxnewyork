@@ -732,7 +732,7 @@ margin: 0rem !important;
             </div>
             <div class="common-grid-one-col">
               <div class="booking-form w-form">
-                <form method="post" name="email-form" data-name="Email Form" action="https://formsubmit.co/thepizzaboxny@gmail.com" class="form-form" data-wf-page-id="683c82ea0d0eeb82005cd172" data-wf-element-id="0035676e-c36d-2c88-0a31-3fb2b60f9f0a" onsubmit="formatDateTime()">
+                <form method="post" name="email-form" data-name="Email Form" id="event-booking-form" class="form-form" data-wf-page-id="683c82ea0d0eeb82005cd172" data-wf-element-id="0035676e-c36d-2c88-0a31-3fb2b60f9f0a">
                   <!-- Anti-spam hidden fields -->
                   <input type="hidden" name="_subject" value="New Event Inquiry from The Pizza Box Website">
                   <input type="hidden" name="_replyto" value="">
@@ -845,35 +845,66 @@ function formatDateTime() {
   }
 }
 
-// Dual submission: Send to both FormSubmit.co (email) AND Airtable
+// Handle form submission to Airtable
 document.addEventListener('DOMContentLoaded', function() {
-  const form = document.querySelector('form[name="email-form"]');
+  const form = document.getElementById('event-booking-form');
+  const successMessage = document.querySelector('.success-message');
+  const errorMessage = document.querySelector('.error-message');
   
   if (form) {
     form.addEventListener('submit', async function(e) {
-      // Don't prevent default - let FormSubmit.co work normally
-      // But also send to Airtable in parallel
+      e.preventDefault(); // Prevent default form submission
       
+      // Format date/time before submission
+      formatDateTime();
+      
+      // Get form data
       const formData = new FormData(form);
       
-      // Send to Airtable (non-blocking)
+      // Show loading state (optional - you can add a loading indicator)
+      const submitButton = form.querySelector('input[type="submit"]');
+      const originalButtonText = submitButton.value;
+      submitButton.value = 'Submitting...';
+      submitButton.disabled = true;
+      
       try {
-        const airtableResponse = await fetch('https://thepizzaboxformsubmission.elombe.workers.dev', {
+        // Send to Airtable via Worker
+        const response = await fetch('https://thepizzaboxformsubmission.elombe.workers.dev', {
           method: 'POST',
           body: formData
         });
         
-        if (airtableResponse.ok) {
-          console.log('✅ Form data saved to Airtable');
+        const result = await response.json();
+        
+        if (response.ok && result.success) {
+          // Show success message
+          console.log('✅ Form submitted successfully to Airtable:', result.recordId);
+          form.style.display = 'none';
+          successMessage.style.display = 'block';
+          
+          // Reset form after 3 seconds
+          setTimeout(() => {
+            form.reset();
+            form.style.display = 'block';
+            successMessage.style.display = 'none';
+            submitButton.value = originalButtonText;
+            submitButton.disabled = false;
+          }, 3000);
         } else {
-          console.warn('⚠️ Airtable save failed, but email will still be sent');
+          throw new Error(result.error || 'Submission failed');
         }
       } catch (error) {
-        console.warn('⚠️ Airtable save error, but email will still be sent:', error);
+        // Show error message
+        console.error('❌ Form submission error:', error);
+        errorMessage.style.display = 'block';
+        submitButton.value = originalButtonText;
+        submitButton.disabled = false;
+        
+        // Hide error after 5 seconds
+        setTimeout(() => {
+          errorMessage.style.display = 'none';
+        }, 5000);
       }
-      
-      // Let the form continue to submit to FormSubmit.co normally
-      // (don't call e.preventDefault())
     });
   }
 });
