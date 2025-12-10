@@ -3009,7 +3009,7 @@ input[id="Number-of-Seats"] {
 
 .modal-scroll-content-w {
   grid-column-gap: 61px;
-  grid-row-gap: 61px;
+  grid-row-gap: 10px;
   color: #000;
   text-align: center;
   flex-flow: column;
