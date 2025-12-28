@@ -21,6 +21,22 @@
 </head>
 <body>
   <div class="page-wrapper">
+    <div data-w-id="d82523aa-6267-5513-5e2b-46b10bab83b6" style="opacity: 1;" class="brix---top-bar-wrapper">
+      <div class="brix---top-bar-small-padding">
+        <div class="brix---container-default w-container">
+          <div class="brix---top-bar-flex-h-sb">
+            <div class="brix---top-bar-right-col">
+              <div class="brix---text-left---t-center">
+                <div>New Years Eve Party at The Pizza Box NY on Legendary Bleecker Street</div>
+                <a href="#info-section" class="annouuncement-text-link-block">Tap to See New Years Opening Hours</a>
+              </div>
+            </div>
+            <a href="https://www.eventbrite.com/e/new-years-eve-party-at-the-pizza-box-ny-on-legendary-bleecker-street-tickets-1979025987001?aff=oddtdtcreator" target="_blank" class="event_link w-button">Get Tickets</a>
+          </div>
+        </div>
+        <div data-w-id="d82523aa-6267-5513-5e2b-46b10bab83c0" class="brix---top-bar-close-icon"><img src="images/icon-rounded-close-icon.svg" alt="Icon Rounded Closed - BRIX Templates" class="brix---icon-small-hover"></div>
+      </div>
+    </div>
     <div class="global-styles w-embed">
       <style>
 /* Make text look crisper and more legible in all browsers */
@@ -257,7 +273,7 @@ margin: 0rem !important;
           </div>
         </div>
       </div>
-      <section class="section-featured padding-section-medium">
+      <section id="info-section" class="section-featured padding-section-medium">
         <div class="padding-global">
           <div class="w-layout-blockcontainer container-medium w-container">
             <div class="three-column-vertical-comp">
@@ -278,9 +294,10 @@ margin: 0rem !important;
                   <div class="featured-content">
                     <h3 class="heading-style-h3">Open Hours</h3>
                     <div class="featured-text-wrap">
+                      <div class="text-size-regular"><strong>New Years Eve* 11-1am, <br>New Years Day* 11 AM - 10 PM</strong></div>
                       <div class="text-size-regular">Monday <br><strong>Closed</strong></div>
-                      <div class="text-size-regular">Tuesday, Wednesday &amp; Thursday <strong><br>11 AM - 10 PM</strong></div>
-                      <div class="text-size-regular">Friday &amp; Saturday <br>‍<strong>11 AM - 12 AM</strong></div>
+                      <div class="text-size-regular">Tuesday, Wednesday &amp; Thursday <strong><br>11 AM - 10 PM</strong></div>
+                      <div class="text-size-regular">Friday &amp; Saturday <br>‍<strong>11 AM - 12 AM</strong></div>
                       <div class="text-size-regular">Sunday<br>‍<strong>11 AM - 9 PM</strong></div>
                     </div>
                   </div>
@@ -911,6 +928,20 @@ function formatDateTime() {
         submitButton.disabled = false;
       }
     });
+  });
+})();
+
+// Handle announcement bar close icon
+(function() {
+  window.addEventListener('load', function() {
+    const closeIcon = document.querySelector('.brix---top-bar-close-icon');
+    const announcementBar = document.querySelector('.brix---top-bar-wrapper');
+    
+    if (closeIcon && announcementBar) {
+      closeIcon.addEventListener('click', function() {
+        announcementBar.style.display = 'none';
+      });
+    }
   });
 })();
 </script>
